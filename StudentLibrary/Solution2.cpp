@@ -8,11 +8,10 @@
 #include "StudentConfiguration.h"
 #ifdef COMPILE_EXERCICE_2
 
-float Solution2::GetBalance(const std::string& accountName)
+float Solution2::GetBalance(const std::string& accountFileName)
 {
     try {
-        std::string fileName = "BankAccount/" + accountName + ".txt";
-        std::ifstream file(fileName);
+        std::ifstream file("BankAccount/" + accountFileName);
 
         if (!file.is_open()) {
             throw std::runtime_error("File not found");
